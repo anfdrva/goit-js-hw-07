@@ -14,6 +14,8 @@ list.onclick = (evt) => {
 
 list.addEventListener('click', heandlerClick);
 
+const lightbox = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: 250});
+
 function createMarkUp(arr) {
     return arr.map(({ preview, original, description }) => `
    <li class="gallery__item">
@@ -28,7 +30,7 @@ function heandlerClick(evt) {
     if (evt.target.classList.contains('gallery__image')) {
         console.log(evt.target)
     }
-    const lightbox = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: 250});
+   
 }
 
 console.log(galleryItems);
